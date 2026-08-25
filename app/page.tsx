@@ -201,10 +201,6 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
       <a className="skip" href="#main">
         Skip to main content
       </a>
-      <div className="preview">
-        CLUB WEBSITE · Workshop and event details marked “sample” or “TBD” are
-        awaiting confirmation.
-      </div>
       <header>
         <Link className="brand" href="/" prefetch={false}>
           <b>H</b>
