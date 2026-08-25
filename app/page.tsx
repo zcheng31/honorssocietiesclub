@@ -49,31 +49,26 @@ const leadershipDepartments = [
   {
     key: "executive",
     title: "Executive Board",
-    heading: "President and officers",
     openRoles: [] as string[],
   },
   {
     key: "events",
     title: "Event Coordination",
-    heading: "Plan the semester",
     openRoles: [] as string[],
   },
   {
     key: "public-relations",
     title: "Public Relations",
-    heading: "Connect with students",
     openRoles: [] as string[],
   },
   {
     key: "icc",
     title: "Inter-Club Council",
-    heading: "Represent the club",
-    openRoles: ["ICC Lead"],
+    openRoles: [] as string[],
   },
   {
     key: "technology",
     title: "Technology",
-    heading: "Build the digital experience",
     openRoles: ["Technology Lead", "Technology Members"],
   },
 ];
@@ -404,12 +399,13 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
                 member.departments.includes(department.key),
               );
               return (
-                <section className="leadership-department" key={department.key}>
+                <section
+                  className="leadership-department"
+                  data-department={department.key}
+                  key={department.key}
+                >
                   <div className="department-heading">
-                    <div>
-                      <p className="eyebrow">{department.title}</p>
-                      <h3>{department.heading}</h3>
-                    </div>
+                    <p className="eyebrow">{department.title}</p>
                   </div>
                   <div
                     className="department-row"
@@ -489,8 +485,6 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
                         </div>
                         <b className="officer-role">{member.role}</b>
                         <h3>{member.name}</h3>
-                        <small className="bio-label">PERSONAL BIO</small>
-                        <p>{member.bio}</p>
                         <div className="officer-actions">
                           {member.linkedin ? (
                             <a
