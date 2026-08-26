@@ -160,3 +160,18 @@ nav a,.button,.meeting-links a,.open-role-apply{display:inline-flex;align-items:
 @media(max-width:600px){
   .department-row .board-card{flex-basis:72vw;min-width:210px}
 }
+
+/* Federal Work-Study student resource */
+.fws-resource{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.75fr);gap:clamp(24px,4vw,52px);margin:42px 0 54px;padding:clamp(28px,4vw,52px);border:1px solid rgba(49,95,208,.25);border-radius:34px;background:linear-gradient(145deg,rgba(255,255,255,.97),rgba(226,239,255,.92));box-shadow:0 22px 58px rgba(29,62,132,.12)}
+.fws-resource-main>h3{margin:15px 0 18px;font-size:clamp(31px,4vw,52px)}
+.fws-resource-main>p{max-width:780px;color:#4d5d79}
+.fws-benefits{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px;margin:24px 0;padding:0;list-style:none}
+.fws-benefits li{position:relative;padding:13px 14px 13px 38px;border:1px solid rgba(49,95,208,.14);border-radius:16px;background:rgba(255,255,255,.62);color:#24395f}
+.fws-benefits li::before{content:"✦";position:absolute;left:15px;top:13px;color:#315fd0}
+.fws-disclaimer{padding:17px 19px;border-left:3px solid #ffd56a;background:rgba(255,245,204,.55);font-size:13px}
+.fws-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:25px}
+.fws-form-note{display:block;max-width:740px;margin-top:18px;color:#56647f;line-height:1.6}
+.fws-office{align-self:start;padding:27px;border:1px solid rgba(49,95,208,.22);border-radius:24px;background:linear-gradient(155deg,#0b2b65,#48458f);color:white;box-shadow:0 18px 40px rgba(6,20,47,.2)}
+.fws-office .eyebrow{color:#aeeaff}.fws-office h4{margin:8px 0 12px;font:500 29px/1.12 Georgia,'Times New Roman',serif}.fws-office>p{color:#e1eaff}.fws-office a{color:#fff1ae;font-weight:800}.fws-office dl{margin:24px 0}.fws-office dl div{display:flex;justify-content:space-between;gap:18px;padding:9px 0;border-top:1px solid rgba(255,255,255,.16)}.fws-office dt{font-weight:800}.fws-office dd{margin:0;text-align:right}.fws-office>small{color:#d8e5ff;line-height:1.55}
+@media(max-width:900px){.fws-resource{grid-template-columns:1fr}.fws-office{width:100%}}
+@media(max-width:600px){.fws-resource{margin:32px 0 42px;padding:25px 20px;border-radius:26px}.fws-benefits{grid-template-columns:1fr}.fws-actions .button{width:100%}.fws-office{padding:23px 20px}.fws-office dl div{align-items:flex-start;flex-direction:column;gap:2px}.fws-office dd{text-align:left}}

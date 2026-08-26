@@ -556,6 +556,69 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
               <span>View PTK scholarship opportunities ↗</span>
             </a>
           </div>
+          <section className="fws-resource" aria-labelledby="fws-title">
+            <div className="fws-resource-main">
+              <p className="eyebrow">Student employment</p>
+              <span className="status green">Interest form</span>
+              <h3 id="fws-title">Interested in Federal Work-Study?</h3>
+              <p>
+                ELAC Financial Aid is exploring student interest in the Federal
+                Work-Study Program. Eligible students may earn money and gain
+                experience through part-time employment on campus or with an
+                approved community service organization.
+              </p>
+              <ul className="fws-benefits">
+                <li>Earn income that can help with educational expenses.</li>
+                <li>Build professional experience and practical career skills.</li>
+                <li>Strengthen your resume for future employment opportunities.</li>
+                <li>Work in an environment that supports academic success.</li>
+              </ul>
+              <p className="fws-disclaimer">
+                Submitting an interest form does not guarantee eligibility or
+                placement. Students must meet program requirements, and funding
+                and available positions are limited.
+              </p>
+              <div className="fws-actions">
+                <a
+                  className="button primary"
+                  href="https://www.elac.edu/financial-aid"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit ELAC Financial Aid ↗
+                </a>
+                <a className="button outline" href="mailto:finaid@elac.edu">
+                  Email Financial Aid
+                </a>
+              </div>
+              <small className="fws-form-note">
+                Use ELAC’s current Federal Work-Study interest form when it is
+                provided by Financial Aid. If the form is not visible on the
+                official page, contact the office to request the current link.
+              </small>
+            </div>
+            <aside className="fws-office" aria-label="ELAC Financial Aid Office information">
+              <p className="eyebrow">Questions?</p>
+              <h4>Financial Aid Office</h4>
+              <p>
+                E1 Student Services Building, Room 135
+                <br />
+                <a href="tel:+13232658738">323-265-8738</a>
+              </p>
+              <dl>
+                <div><dt>Monday</dt><dd>9:00 AM–5:00 PM</dd></div>
+                <div><dt>Tuesday</dt><dd>9:00 AM–6:00 PM</dd></div>
+                <div><dt>Wednesday</dt><dd>9:00 AM–6:00 PM</dd></div>
+                <div><dt>Thursday</dt><dd>9:00 AM–5:00 PM</dd></div>
+                <div><dt>Friday</dt><dd>8:00 AM–12:00 PM</dd></div>
+                <div><dt>First Saturday</dt><dd>9:00 AM–1:00 PM</dd></div>
+              </dl>
+              <small>
+                Hours are subject to change. Computer lab services are not
+                available on the first Saturday of the month.
+              </small>
+            </aside>
+          </section>
           <div className="opportunity-groups">
             {["ELAC Resource", "Scholarship"].map((type) => (
               <section
