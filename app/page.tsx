@@ -1521,8 +1521,14 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
         </div>
         <p>Student-led. Academically driven. Community minded.</p>
         <small>
-          Preview site · Sample content must be replaced and approved before
-          public promotion.
+          Honors Societies Club is a student-led council striving to enhance
+          fellow student scholars’ experiences throughout their transfer
+          journeys. External websites and opportunities are shared for
+          educational convenience only and do not imply endorsement,
+          partnership, or affiliation. Details, eligibility requirements,
+          deadlines, and availability may change. Always verify information
+          directly with the official organization before applying or making
+          decisions.
         </small>
       </footer>
     </>
