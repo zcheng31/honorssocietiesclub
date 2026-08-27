@@ -440,7 +440,9 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
                     )}
                     {members.map((member, index) => (
                       <article
-                        className="board-card"
+                        className={`board-card board-card-${member.name
+                          .toLowerCase()
+                          .replaceAll(" ", "-")}`}
                         key={`${department.key}-${member.email}`}
                       >
                         <div
