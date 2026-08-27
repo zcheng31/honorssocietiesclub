@@ -125,7 +125,9 @@ nav a,.button,.meeting-links a,.open-role-apply{display:inline-flex;align-items:
 .department-row .board-card .portrait-chidera-maduabuchi .portrait-frame img{object-position:50% 7%}
 .department-row .board-card .portrait-yuna-hwang .portrait-frame img{object-position:50% 48%}
 .department-row .board-card .portrait-emely-rosas-rugerio .portrait-frame img{object-position:50% 0}
-.department-row .board-card-emely-rosas-rugerio:hover{transform:none}
+.department-row .board-card{overflow:hidden}
+.department-row .board-card:hover{transform:none!important;filter:none}
+.department-row .board-card:hover::after{transform:translateX(-130%)}
 .portrait-sticker{position:absolute;z-index:3;display:grid;place-items:center;width:34px;height:34px;border:2px solid rgba(255,255,255,.92);font-style:normal;line-height:1;pointer-events:none;box-shadow:0 8px 20px rgba(34,64,132,.18);transition:translate .28s cubic-bezier(.16,1,.3,1),rotate .28s ease,scale .28s ease}
 .portrait-sticker-star{left:-8px;top:-8px;border-radius:11px;background:linear-gradient(145deg,#ffe791,#ffd15a);color:#173b87;rotate:-12deg}
 .portrait-sticker-heart{right:-10px;top:17%;border-radius:50%;background:linear-gradient(145deg,#ffe6f1,#ffcfe5);color:#a24979;rotate:9deg}
@@ -133,6 +135,9 @@ nav a,.button,.meeting-links a,.open-role-apply{display:inline-flex;align-items:
 .board-card:hover .portrait-sticker-star{translate:-2px -4px;rotate:-20deg;scale:1.06}
 .board-card:hover .portrait-sticker-heart{translate:3px -2px;rotate:15deg;scale:1.08}
 .board-card:hover .portrait-sticker-flower{translate:0 4px;rotate:16deg;scale:1.06}
+.department-row .board-card:hover .portrait-sticker-star{translate:0 0;rotate:-12deg;scale:1}
+.department-row .board-card:hover .portrait-sticker-heart{translate:0 0;rotate:9deg;scale:1}
+.department-row .board-card:hover .portrait-sticker-flower{translate:0 0;rotate:8deg;scale:1}
 @media(max-width:600px){.portrait-sticker{width:31px;height:31px}.portrait-sticker-star{left:-6px;top:-6px}.portrait-sticker-heart{right:-7px}.portrait-sticker-flower{bottom:-7px}}
 @media(prefers-reduced-motion:reduce){.portrait-sticker{transition:none}.board-card:hover .portrait-sticker{translate:0 0;scale:1}}
 
