@@ -5,7 +5,7 @@ export const board=[
  {name:'Mary Gonzalez Avalos',initials:'MG',role:'Event Coordinator Lead',departments:['events'],bio:'Event Coordinator Lead',email:'gonzalmb9158@student.laccd.edu',linkedin:''},
  {name:'Marvin Zamudio',initials:'MZ',role:'Event Coordinator',departments:['events'],bio:'Event Coordinator',email:'Zamudim6948@student.laccd.edu',linkedin:''},
  {name:'Mersse Aguiar',initials:'MA',role:'Public Relations',departments:['public-relations'],bio:'Public Relations',email:'aguiarm6405@student.laccd.edu',linkedin:''},
- {name:'Emely Rosas Rugerio',initials:'ER',role:'Event Coordinator and Public Relations',departments:['events','public-relations'],bio:'Event Coordinator and Public Relations',email:'rosaseg2340@student.laccd.edu',linkedin:''},
+ {name:'Emely Rosas Rugerio',initials:'ER',role:'Event Coordinator and Public Relations',departments:['events','public-relations'],photo:'/emely-rosas-rugerio.jpg',bio:'Event Coordinator and Public Relations',email:'rosaseg2340@student.laccd.edu',linkedin:''},
  {name:'Michael Valdez',initials:'MV',role:'ICC Delegate',departments:['icc'],bio:'ICC Delegate',email:'Valdezm4648@student.laccd.edu',linkedin:''}];
 export const opportunities=[
  {type:'ELAC Resource',status:'Open',title:'Fall 2026 ELAC Student Housing at Cal State LA',organization:'East Los Angeles College',eligibility:'Furnished apartments with two students per bedroom. All-inclusive pricing starts at $1,150 per month and includes utilities, internet, and a meal plan. No transfer is required. Space is limited.',deadline:'Space limited',link:'https://bit.ly/FA26ELACStudentHousing',linkLabel:'Apply for ELAC housing',note:'Questions? Contact the ELAC Basic Needs Center.'},
