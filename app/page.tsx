@@ -51,7 +51,7 @@ const leadershipDepartments = [
   {
     key: "executive",
     title: "Executive Board",
-    openRoles: [] as string[],
+    openRoles: ["Secretary"],
   },
   {
     key: "events",
