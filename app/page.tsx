@@ -443,24 +443,6 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
                     }}
                     aria-label={`${department.title} leadership profiles`}
                   >
-                    {department.openRoles.length > 0 && (
-                      <aside className="department-open">
-                        <small>OPEN LEADERSHIP OPPORTUNITIES</small>
-                        <div className="open-role-titles">
-                          {department.openRoles.map((role) => (
-                            <h4 key={role}>{role}</h4>
-                          ))}
-                        </div>
-                        <a
-                          className="open-role-apply"
-                          href={officerApplication}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          Apply to Join ↗
-                        </a>
-                      </aside>
-                    )}
                     {members.map((member, index) => (
                       <article
                         className={`board-card board-card-${member.name
@@ -548,6 +530,24 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
                         )}
                       </article>
                     ))}
+                    {department.openRoles.length > 0 && (
+                      <aside className="department-open">
+                        <small>OPEN LEADERSHIP OPPORTUNITIES</small>
+                        <div className="open-role-titles">
+                          {department.openRoles.map((role) => (
+                            <h4 key={role}>{role}</h4>
+                          ))}
+                        </div>
+                        <a
+                          className="open-role-apply"
+                          href={officerApplication}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Apply to Join ↗
+                        </a>
+                      </aside>
+                    )}
                   </div>
                 </section>
               );
