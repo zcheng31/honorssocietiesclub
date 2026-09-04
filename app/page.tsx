@@ -6,6 +6,8 @@ import { board, events, opportunities, workshops } from "./site-content";
 const teams =
   "https://teams.microsoft.com/meet/242053094361812?p=DPfiRc8FW4X8wmHchU";
 const officerApplication = "https://forms.cloud.microsoft/r/FdjQE5SiKE";
+const discordInvite = "https://discord.gg/7qPdPG4FT9";
+const clubEmail = "honorssocietiesclub@gmail.com";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const sitePath = (path: string) => `${basePath}${path}`;
 const homeNav = [
@@ -77,6 +79,9 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
   const [eventFilter, setEventFilter] = useState("All");
   const [menu, setMenu] = useState(false);
   const [studentNeed, setStudentNeed] = useState(0);
+  const [inquiryStatus, setInquiryStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
   const [revealedEmails, setRevealedEmails] = useState<Set<string>>(
     () => new Set(),
   );
@@ -84,17 +89,35 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
     eventFilter === "All"
       ? events
       : events.filter((x) => x.type === eventFilter);
-  const sendInquiry = (event: FormEvent<HTMLFormElement>) => {
+  const sendInquiry = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const form = new FormData(event.currentTarget);
+    const formElement = event.currentTarget;
+    const form = new FormData(formElement);
     const name = String(form.get("name") || "");
     const email = String(form.get("email") || "");
     const message = String(form.get("message") || "");
-    const subject = encodeURIComponent(`Website inquiry from ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-    );
-    window.location.href = `mailto:honorssocietiesclub@gmail.com?subject=${subject}&body=${body}`;
+    setInquiryStatus("sending");
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${clubEmail}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          _subject: `HSC website inquiry from ${name}`,
+          _template: "table",
+        }),
+      });
+      if (!response.ok) throw new Error("Inquiry delivery failed");
+      setInquiryStatus("success");
+      formElement.reset();
+    } catch {
+      setInquiryStatus("error");
+    }
   };
   const toggleEmail = (email: string) => {
     setRevealedEmails((current) => {
@@ -346,7 +369,7 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
                 </p>
                 <div className="meeting-links">
                   <a href="https://www.instagram.com/elachonors/" target="_blank" rel="noreferrer">Instagram ↗</a>
-                  <a href="https://discord.gg/CtY4fM3yUq" target="_blank" rel="noreferrer">Discord ↗</a>
+                  <a href={discordInvite} target="_blank" rel="noreferrer">Discord ↗</a>
                 </div>
               </div>
             </div>
@@ -1458,9 +1481,9 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
             </p>
             <a
               className="email-link"
-              href="mailto:honorssocietiesclub@gmail.com"
+              href={`mailto:${clubEmail}`}
             >
-              honorssocietiesclub@gmail.com
+              {clubEmail}
             </a>
             <p className="contact-address">
               Honors Societies Club
@@ -1474,13 +1497,25 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
               Monterey Park, CA 91754
             </p>
             <figure className="qr-card contact-qr">
-              <img
-                src={sitePath("/join-qr.jpeg")}
-                alt="QR code to join Honors Societies Club and receive club notifications"
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption>Scan to join the club community</figcaption>
+              <a href={discordInvite} target="_blank" rel="noreferrer">
+                <img
+                  src={sitePath("/discord-invite-qr.png")}
+                  alt="QR code for the Honors Societies Club Discord invitation"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <figcaption>
+                Scan the QR code or open the verified Discord invitation.
+              </figcaption>
+              <a
+                className="button primary"
+                href={discordInvite}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Join HSC on Discord ↗
+              </a>
             </figure>
           </div>
           <form className="inquiry-form" onSubmit={sendInquiry}>
@@ -1508,8 +1543,25 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
                 required
               />
             </div>
-            <button className="button primary" type="submit">Send inquiry →</button>
-            <small>Submitting opens your email app with the message ready to send.</small>
+            <button
+              className="button primary"
+              type="submit"
+              disabled={inquiryStatus === "sending"}
+            >
+              {inquiryStatus === "sending" ? "Sending…" : "Send inquiry →"}
+            </button>
+            <p className={`form-status ${inquiryStatus}`} aria-live="polite">
+              {inquiryStatus === "success" &&
+                "Thank you. Your inquiry was sent to the Honors Societies Club."}
+              {inquiryStatus === "error" && (
+                <>
+                  We could not send your inquiry. Please email{" "}
+                  <a href={`mailto:${clubEmail}`}>{clubEmail}</a>.
+                </>
+              )}
+              {inquiryStatus === "idle" &&
+                "Your message will be emailed directly to the Honors Societies Club."}
+            </p>
           </form>
         </section>
       </main>
