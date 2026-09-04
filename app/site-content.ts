@@ -2,7 +2,6 @@ export const board=[
  {name:'Joyce Cheng',initials:'JC',role:'President',departments:['executive'],bio:'President',email:'chengz3594@student.laccd.edu',linkedin:'https://www.linkedin.com/in/joycecheng31'},
  {name:'Chidera Maduabuchi',initials:'CM',role:'Vice President',departments:['executive'],photo:'/chidera-maduabuchi.jpg',bio:'Vice President',email:'maduabcv5680@student.laccd.edu',linkedin:''},
  {name:'Yuna Hwang',initials:'YH',role:'Treasurer',departments:['executive'],photo:'/yuna-hwang.jpg',bio:'Treasurer',email:'hwangy8749@student.laccd.edu',linkedin:'https://www.linkedin.com/in/yunahwang721'},
- {name:'Mary Gonzalez Avalos',initials:'MG',role:'Event Coordinator Lead',departments:['events'],bio:'Event Coordinator Lead',email:'gonzalmb9158@student.laccd.edu',linkedin:''},
  {name:'Marvin Zamudio',initials:'MZ',role:'Event Coordinator',departments:['events'],bio:'Event Coordinator',email:'Zamudim6948@student.laccd.edu',linkedin:''},
  {name:'Mersse Aguiar',initials:'MA',role:'Public Relations',departments:['public-relations'],bio:'Public Relations',email:'aguiarm6405@student.laccd.edu',linkedin:''},
  {name:'Emely Rosas Rugerio',initials:'ER',role:'Event Coordinator and Public Relations',departments:['events','public-relations'],photo:'/emely-rosas-rugerio.jpg',bio:'Event Coordinator and Public Relations',email:'rosaseg2340@student.laccd.edu',linkedin:''},
