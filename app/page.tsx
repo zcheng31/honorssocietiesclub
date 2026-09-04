@@ -1240,7 +1240,7 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
                   {(x.tags ?? [x.type]).map((tag) => (
                     <span className="tag" key={tag}>{tag}</span>
                   ))}
-                  {!x.confirmed && <span className="tag">Tentative sample</span>}
+                  {!x.confirmed && <span className="tag">Tentative</span>}
                   <h3>{x.title}</h3>
                   <p>{x.description}</p>
                   <small>
