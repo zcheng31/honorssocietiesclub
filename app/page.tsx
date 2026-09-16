@@ -51,7 +51,7 @@ const leadershipDepartments = [
   {
     key: "executive",
     title: "Executive Board",
-    openRoles: ["Secretary"],
+    openRoles: [] as string[],
   },
   {
     key: "events",
@@ -448,7 +448,7 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
                         className={`board-card board-card-${member.name
                           .toLowerCase()
                           .replaceAll(" ", "-")}`}
-                        key={`${department.key}-${member.email}`}
+                        key={`${department.key}-${member.name}`}
                       >
                         <div
                           className={`portrait portrait-${member.name
@@ -508,7 +508,7 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
                               in
                             </span>
                           )}
-                          <button
+                          {member.email && <button
                             type="button"
                             className="officer-action email"
                             onClick={() => toggleEmail(member.email)}
@@ -517,7 +517,7 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
                             aria-label={`${revealedEmails.has(member.email) ? "Hide" : "Show"} ${member.name}'s ELAC email`}
                           >
                             ✉
-                          </button>
+                          </button>}
                         </div>
                         {revealedEmails.has(member.email) && (
                           <div
