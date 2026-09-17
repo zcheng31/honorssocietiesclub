@@ -61,7 +61,7 @@ const leadershipDepartments = [
   {
     key: "public-relations",
     title: "Public Relations",
-    openRoles: [] as string[],
+    openRoles: ["Public Relations Opening"],
   },
   {
     key: "icc",
@@ -1233,7 +1233,8 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
             {shownEvents.map((x) => (
               <article className="event" key={x.title}>
                 <div className="date">
-                  <strong>{x.day}</strong>
+                  {x.datePrefix && <span>{x.datePrefix}</span>}
+                  <strong style={{ fontSize: x.datePrefix ? 30 : undefined }}>{x.day}</strong>
                   <span>{x.month}</span>
                 </div>
                 <div>
