@@ -1290,6 +1290,24 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
             aria-label="Recent ELAC Honors Instagram posts"
           >
             <a
+              className="instagram-card"
+              href="https://www.instagram.com/elachonors/p/Dc0I6mjs7Ox/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={sitePath("/instagram-first-general-meeting.webp")}
+                alt="ELAC Honors Instagram announcement for HSC’s September 4, 2026 first general meeting"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="instagram-copy">
+                <small>SEPTEMBER 2, 2026 · NEWEST POST</small>
+                <h3>HSC First General Meeting</h3>
+                <p>The September 4 kickoff announcement: meet the board, explore Honors, PTK and AGS, and preview fall activities.</p>
+              </div>
+            </a>
+            <a
               className="instagram-card instagram-poster spanish"
               href="https://www.instagram.com/elachonors/p/DcPKZMWS3Ac/"
               target="_blank"
@@ -1297,9 +1315,9 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
             >
               <div className="instagram-art"><span>H</span><b>ESPAÑOL</b></div>
               <div className="instagram-copy">
-                <small>AUGUST 19, 2026 · NEWEST POST</small>
+                <small>AUGUST 19, 2026</small>
                 <h3>Honors Spanish 10</h3>
-                <p>Latin American Civilization with Professor Nora Zepeda · Fall 2026 · Section 24339.</p>
+                <p>Online Latin American Civilization with Professor Nora Zepeda · Fall 2026 · Section 24339.</p>
               </div>
             </a>
             <a
@@ -1317,7 +1335,7 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
               <div className="instagram-copy">
                 <small>AUGUST 19, 2026</small>
                 <h3>Philosophy 20</h3>
-                <p>Professor G. Villaseñor · Tuesdays and Thursdays · Fall 2026.</p>
+                <p>Professor G. Villaseñor · Tuesdays and Thursdays, 1:45–3:10 PM · Honors section 20592.</p>
               </div>
             </a>
             <a
@@ -1330,7 +1348,7 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
               <div className="instagram-copy">
                 <small>AUGUST 17, 2026</small>
                 <h3>English C1000</h3>
-                <p>Explore language, music, and meaning in an Honors English course.</p>
+                <p>Lyrics for the Soul: Music as Social Commentary · Tuesdays and Thursdays, 8:50–10:15 AM · Zero-cost texts.</p>
               </div>
             </a>
             <a
@@ -1346,22 +1364,9 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
                 <p>Another look at the Honors English experience for Fall 2026.</p>
               </div>
             </a>
-            <a
-              className="instagram-card instagram-poster discord"
-              href="https://www.instagram.com/elachonors/p/DbZKFMmhn5G/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div className="instagram-art"><span>◎</span><b>STAY CONNECTED</b></div>
-              <div className="instagram-copy">
-                <small>JULY 29, 2026</small>
-                <h3>Join the community</h3>
-                <p>Connect with ELAC Honors students and receive community updates.</p>
-              </div>
-            </a>
           </div>
           <p className="instagram-note">
-            Public post previews checked August 24, 2026. Follow @elachonors
+            Public post previews checked September 16, 2026. Follow @elachonors
             for the newest updates.
           </p>
         </section>
