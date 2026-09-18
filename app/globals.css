@@ -125,6 +125,7 @@ nav a,.button,.meeting-links a,.open-role-apply{display:inline-flex;align-items:
 .department-row .board-card .portrait-chidera-maduabuchi .portrait-frame img{object-position:50% 7%}
 .department-row .board-card .portrait-yuna-hwang .portrait-frame img{object-position:50% 48%}
 .department-row .board-card .portrait-emely-rosas-rugerio .portrait-frame img{object-position:50% 0}
+.department-row .board-card .portrait-cindy-chen .portrait-frame img{object-position:45% 18%;transform:scale(1.25);transform-origin:45% 18%}
 .department-row .board-card{overflow:hidden}
 .department-row .board-card:hover{transform:none!important;filter:none}
 .department-row .board-card:hover::after{transform:translateX(-130%)}

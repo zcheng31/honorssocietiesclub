@@ -354,8 +354,8 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
               <span>01</span>
               <div>
                 <small>WHEN WE MEET</small>
-                <h3>Every other Friday</h3>
-                <p>General meetings begin September 4, 2026, and continue biweekly.</p>
+                <h3>Meeting dates align with club events</h3>
+                <p>General meeting dates are to be determined.</p>
               </div>
             </div>
             <div className="meeting-row">
