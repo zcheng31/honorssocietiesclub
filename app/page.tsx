@@ -1285,6 +1285,32 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
             aria-label="Recent ELAC Honors Instagram posts"
           >
             <a
+              className="instagram-card instagram-poster clay"
+              href="https://www.instagram.com/elachonors/p/Ddc9ANDsilZ/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="instagram-art"><span>✦</span><b>CLAY &amp; CONNECT</b></div>
+              <div className="instagram-copy">
+                <small>SEPTEMBER 18, 2026 · NEWEST POST</small>
+                <h3>Clay &amp; Connect Workshop</h3>
+                <p>Friday, September 25 · 12:30–1:30 PM · EAST-S2, Room 203. No experience needed; all ELAC students are welcome.</p>
+              </div>
+            </a>
+            <a
+              className="instagram-card instagram-poster rsvp"
+              href="https://www.instagram.com/elachonors/p/DdcR1F7Eqwz/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="instagram-art"><span>✓</span><b>RESERVE A FREE SPOT</b></div>
+              <div className="instagram-copy">
+                <small>SEPTEMBER 18, 2026</small>
+                <h3>Clay &amp; Connect RSVP</h3>
+                <p>Materials and firing are included. Open the Instagram post for the free RSVP link and event reminder.</p>
+              </div>
+            </a>
+            <a
               className="instagram-card"
               href="https://www.instagram.com/elachonors/p/Dc0I6mjs7Ox/"
               target="_blank"
@@ -1297,9 +1323,9 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
                 decoding="async"
               />
               <div className="instagram-copy">
-                <small>SEPTEMBER 2, 2026 · NEWEST POST</small>
+                <small>SEPTEMBER 2, 2026</small>
                 <h3>HSC First General Meeting</h3>
-                <p>The September 4 kickoff announcement: meet the board, explore Honors, PTK and AGS, and preview fall activities.</p>
+                <p>The fall kickoff introduced the board, Honors, PTK and AGS opportunities, and upcoming HSC activities.</p>
               </div>
             </a>
             <a
@@ -1333,35 +1359,9 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
                 <p>Professor G. Villaseñor · Tuesdays and Thursdays, 1:45–3:10 PM · Honors section 20592.</p>
               </div>
             </a>
-            <a
-              className="instagram-card instagram-poster lyrics"
-              href="https://www.instagram.com/elachonors/p/DcKBhihSX_e/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div className="instagram-art"><span>♪</span><b>LYRICS FOR THE SOUL</b></div>
-              <div className="instagram-copy">
-                <small>AUGUST 17, 2026</small>
-                <h3>English C1000</h3>
-                <p>Lyrics for the Soul: Music as Social Commentary · Tuesdays and Thursdays, 8:50–10:15 AM · Zero-cost texts.</p>
-              </div>
-            </a>
-            <a
-              className="instagram-card instagram-poster community"
-              href="https://www.instagram.com/elachonors/p/DbeGFmGBJcf/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div className="instagram-art"><span>✦</span><b>HONORS COMMUNITY</b></div>
-              <div className="instagram-copy">
-                <small>JULY 31, 2026</small>
-                <h3>Lyrics for the Soul</h3>
-                <p>Another look at the Honors English experience for Fall 2026.</p>
-              </div>
-            </a>
           </div>
           <p className="instagram-note">
-            Public post previews checked September 16, 2026. Follow @elachonors
+            Public post previews checked September 23, 2026. Follow @elachonors
             for the newest updates.
           </p>
         </section>
