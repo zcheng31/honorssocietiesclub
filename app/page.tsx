@@ -71,7 +71,7 @@ const leadershipDepartments = [
   {
     key: "technology",
     title: "Technology",
-    openRoles: ["Technology Lead", "Technology Members"],
+    openRoles: ["Technology Lead"],
   },
 ];
 
