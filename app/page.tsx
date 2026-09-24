@@ -68,11 +68,6 @@ const leadershipDepartments = [
     title: "Inter-Club Council",
     openRoles: [] as string[],
   },
-  {
-    key: "technology",
-    title: "Technology",
-    openRoles: ["Technology Lead"],
-  },
 ];
 
 export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
