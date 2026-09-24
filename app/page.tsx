@@ -54,14 +54,14 @@ const leadershipDepartments = [
     openRoles: [] as string[],
   },
   {
-    key: "events",
-    title: "Event Coordination",
-    openRoles: [] as string[],
-  },
-  {
     key: "public-relations",
     title: "Public Relations",
     openRoles: ["Public Relations Opening"],
+  },
+  {
+    key: "events",
+    title: "Event Coordination",
+    openRoles: [] as string[],
   },
   {
     key: "icc",

@@ -122,6 +122,7 @@ nav a,.button,.meeting-links a,.open-role-apply{display:inline-flex;align-items:
 .department-row .board-card .portrait{position:relative;isolation:isolate;overflow:visible}
 .department-row .board-card .portrait-frame{position:absolute;z-index:1;inset:0;display:block;width:auto;height:auto;overflow:hidden;border-radius:19px}
 .department-row .board-card .portrait-frame img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 38%}
+.department-row .board-card .portrait-joyce-cheng .portrait-frame img{object-position:50% 28%}
 .department-row .board-card .portrait-chidera-maduabuchi .portrait-frame img{object-position:50% 7%}
 .department-row .board-card .portrait-yuna-hwang .portrait-frame img{object-position:50% 48%}
 .department-row .board-card .portrait-emely-rosas-rugerio .portrait-frame img{object-position:50% 0}
@@ -159,6 +160,7 @@ nav a,.button,.meeting-links a,.open-role-apply{display:inline-flex;align-items:
 .department-open{flex-basis:min(210px,74vw);min-height:250px;margin-top:12px;padding:22px;border-radius:24px}
 @media(min-width:1050px){
   .leadership-departments{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+  .leadership-department[data-department="executive"]{grid-column:1/-1}
   .leadership-department[data-department="technology"]{grid-column:1/-1}
 }
 @media(max-width:800px){
