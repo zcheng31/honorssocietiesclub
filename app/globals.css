@@ -195,3 +195,4 @@ nav a,.button,.meeting-links a,.open-role-apply{display:inline-flex;align-items:
 .form-status.success{color:#17653b;font-weight:800}
 .form-status.error{color:#9e2f2f}
 .form-status a{font-weight:800}
+.past-events{margin-top:clamp(56px,8vw,96px)}

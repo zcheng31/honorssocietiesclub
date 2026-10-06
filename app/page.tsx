@@ -1,7 +1,7 @@
 "use client";
 import { type FormEvent, useEffect, useState } from "react";
 import Link from "next/link";
-import { board, events, opportunities, workshops } from "./site-content";
+import { board, events, opportunities, pastEvents, workshops } from "./site-content";
 
 const teams =
   "https://teams.microsoft.com/meet/242053094361812?p=DPfiRc8FW4X8wmHchU";
@@ -132,7 +132,8 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
   useEffect(() => {
     const main = document.querySelector<HTMLElement>(`.site-view-${view}`);
     if (!main) return;
-    const sections = Array.from(main.querySelectorAll<HTMLElement>(":scope > section"));
+    const sections = Array.from(main.querySelectorAll<HTMLElement>(":scope > section"))
+      .filter((section) => section.id !== "opportunities");
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       sections.forEach((section) => section.classList.add("reveal-visible"));
       return;
@@ -157,7 +158,11 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const sections = Array.from(
       document.querySelectorAll<HTMLElement>(`.site-view-${view} > section`),
-    ).filter((section) => window.getComputedStyle(section).display !== "none");
+    ).filter(
+      (section) =>
+        section.id !== "opportunities" &&
+        window.getComputedStyle(section).display !== "none",
+    );
     const sceneStyles = [
       "scene-rise",
       "scene-down",
@@ -380,6 +385,31 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
                 </p>
               </div>
             )}
+          </div>
+          <div className="past-events">
+            <Heading
+              kicker="Event archive · Newest first"
+              title="Past Events."
+              text="A look back at HSC activities and community moments from this semester."
+            />
+            <div className="event-grid">
+              {pastEvents.map((x) => (
+                <article className="event" key={x.title}>
+                  <div className="date">
+                    <strong>{x.day}</strong>
+                    <span>{x.month}</span>
+                  </div>
+                  <div>
+                    {x.tags.map((tag) => (
+                      <span className="tag" key={tag}>{tag}</span>
+                    ))}
+                    <h3>{x.title}</h3>
+                    <p>{x.description}</p>
+                    <small>{x.time} · {x.location}</small>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
         <section className="notice meeting-hub" aria-labelledby="meeting-hub-title">
