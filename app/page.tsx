@@ -154,71 +154,7 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
   }, [view]);
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const sections = Array.from(
-      document.querySelectorAll<HTMLElement>(`.site-view-${view} > section`),
-    ).filter(
-      (section) =>
-        section.id !== "opportunities" &&
-        window.getComputedStyle(section).display !== "none",
-    );
-    const sceneStyles = [
-      "scene-rise",
-      "scene-down",
-      "scene-left",
-      "scene-right",
-      "scene-diagonal-left",
-      "scene-diagonal-right",
-      "scene-zoom",
-      "scene-tilt",
-      "scene-wipe",
-      "scene-wipe-reverse",
-    ];
-    sections.forEach((section, index) =>
-      section.classList.add("section-transition", sceneStyles[index % sceneStyles.length]),
-    );
-    let frame = 0;
-    const updateScrollMotion = () => {
-      frame = 0;
-      const scrollTop = window.scrollY;
-      const viewportHeight = window.innerHeight;
-      const available = document.documentElement.scrollHeight - window.innerHeight;
-      document.documentElement.style.setProperty("--page-scroll", String(scrollTop));
-      document.documentElement.style.setProperty(
-        "--scroll-progress",
-        String(available > 0 ? Math.min(1, scrollTop / available) : 0),
-      );
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-        if (rect.height === 0) return;
-        const entry = Math.max(
-          0,
-          Math.min(
-            1,
-            (viewportHeight * 0.98 - rect.top) / (viewportHeight * 0.52),
-          ),
-        );
-        section.style.setProperty("--section-entry", String(entry));
-      });
-    };
-    const requestUpdate = () => {
-      if (!frame) frame = window.requestAnimationFrame(updateScrollMotion);
-    };
-    updateScrollMotion();
-    window.addEventListener("scroll", requestUpdate, { passive: true });
-    window.addEventListener("resize", requestUpdate, { passive: true });
-    return () => {
-      if (frame) window.cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", requestUpdate);
-      window.removeEventListener("resize", requestUpdate);
-      sections.forEach((section) => {
-        section.classList.remove("section-transition");
-        sceneStyles.forEach((style) => section.classList.remove(style));
-        section.style.removeProperty("--section-entry");
-      });
-    };
-  }, [view]);
+
   return (
     <>
       <a className="skip" href="#main">
