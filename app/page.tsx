@@ -328,6 +328,60 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
             </div>
           </div>
         </section>
+        <section id="events" className="pad">
+          <Heading
+            kicker="Fall semester"
+            title="Our Club’s upcoming events."
+            text="Discover campus resources, community service, fundraisers, and social events."
+          />
+          <Filters
+            items={[
+              "All",
+              "Campus Resource",
+              "Community Service",
+              "Fundraiser",
+              "Social Events",
+            ]}
+            active={eventFilter}
+            set={setEventFilter}
+          />
+          <div className="event-grid" aria-live="polite">
+            {shownEvents.map((x) => (
+              <article className="event" key={x.title}>
+                <div className="date">
+                  {x.datePrefix && <span>{x.datePrefix}</span>}
+                  <strong style={{ fontSize: x.datePrefix ? 30 : undefined }}>{x.day}</strong>
+                  <span>{x.month}</span>
+                </div>
+                <div>
+                  {(x.tags ?? [x.type]).map((tag) => (
+                    <span className="tag" key={tag}>{tag}</span>
+                  ))}
+                  {!x.confirmed && <span className="tag">Tentative</span>}
+                  <h3>{x.title}</h3>
+                  <p>{x.description}</p>
+                  <small>
+                    {x.time} · {x.locationLink ? (
+                      <a href={x.locationLink} target="_blank" rel="noreferrer">
+                        {x.location} ↗
+                      </a>
+                    ) : x.location}
+                  </small>
+                </div>
+              </article>
+            ))}
+            {shownEvents.length === 0 && (
+              <div className="event-empty">
+                <span>✦</span>
+                <h3>Coming Up Soon.</h3>
+                <p>
+                  We are planning the next {eventFilter.toLowerCase()} update.
+                  Check back for the announcement.
+                </p>
+              </div>
+            )}
+          </div>
+        </section>
         <section className="notice meeting-hub" aria-labelledby="meeting-hub-title">
           <div className="meeting-intro">
             <p className="meeting-label"><span /> CLUB MEETINGS ONLINE</p>
@@ -349,8 +403,8 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
               <span>01</span>
               <div>
                 <small>WHEN WE MEET</small>
-                <h3>Meeting dates align with club events</h3>
-                <p>General meeting dates are to be determined.</p>
+                <h3>October 22 · 12:30–1:30 PM</h3>
+                <p>Join our next general meeting on Microsoft Teams.</p>
               </div>
             </div>
             <div className="meeting-row">
@@ -381,25 +435,6 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
                 </p>
               </div>
             </div>
-          </div>
-        </section>
-        <section id="about" className="pad split">
-          <div>
-            <p className="eyebrow">About the club</p>
-            <h2>Honors is more than a designation.</h2>
-          </div>
-          <div className="copy">
-            <p>
-              Honors Societies Club is an academic club affiliated with the East
-              Los Angeles College Honors Program. We create a welcoming space
-              where motivated students exchange ideas, build lasting
-              connections, and prepare for what comes next.
-            </p>
-            <p>
-              Our programming brings together academic support, transfer
-              preparation, career development, service, and community—so
-              students do not have to navigate the journey alone.
-            </p>
           </div>
         </section>
         <section id="board" className="pad cream">
@@ -547,6 +582,25 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
                 </section>
               );
             })}
+          </div>
+        </section>
+        <section id="about" className="pad split">
+          <div>
+            <p className="eyebrow">About the club</p>
+            <h2>Honors is more than a designation.</h2>
+          </div>
+          <div className="copy">
+            <p>
+              Honors Societies Club is an academic club affiliated with the East
+              Los Angeles College Honors Program. We create a welcoming space
+              where motivated students exchange ideas, build lasting
+              connections, and prepare for what comes next.
+            </p>
+            <p>
+              Our programming brings together academic support, transfer
+              preparation, career development, service, and community—so
+              students do not have to navigate the journey alone.
+            </p>
           </div>
         </section>
         <section id="opportunities" className="pad">
@@ -1206,60 +1260,6 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
             or deadlines. Applicants must confirm all current details directly
             with the official scholarship provider before applying.
           </p>
-        </section>
-        <section id="events" className="pad">
-          <Heading
-            kicker="Fall semester"
-            title="Our Club’s upcoming events."
-            text="Discover campus resources, community service, fundraisers, and social events."
-          />
-          <Filters
-            items={[
-              "All",
-              "Campus Resource",
-              "Community Service",
-              "Fundraiser",
-              "Social Events",
-            ]}
-            active={eventFilter}
-            set={setEventFilter}
-          />
-          <div className="event-grid" aria-live="polite">
-            {shownEvents.map((x) => (
-              <article className="event" key={x.title}>
-                <div className="date">
-                  {x.datePrefix && <span>{x.datePrefix}</span>}
-                  <strong style={{ fontSize: x.datePrefix ? 30 : undefined }}>{x.day}</strong>
-                  <span>{x.month}</span>
-                </div>
-                <div>
-                  {(x.tags ?? [x.type]).map((tag) => (
-                    <span className="tag" key={tag}>{tag}</span>
-                  ))}
-                  {!x.confirmed && <span className="tag">Tentative</span>}
-                  <h3>{x.title}</h3>
-                  <p>{x.description}</p>
-                  <small>
-                    {x.time} · {x.locationLink ? (
-                      <a href={x.locationLink} target="_blank" rel="noreferrer">
-                        {x.location} ↗
-                      </a>
-                    ) : x.location}
-                  </small>
-                </div>
-              </article>
-            ))}
-            {shownEvents.length === 0 && (
-              <div className="event-empty">
-                <span>✦</span>
-                <h3>Coming Up Soon.</h3>
-                <p>
-                  We are planning the next {eventFilter.toLowerCase()} update.
-                  Check back for the announcement.
-                </p>
-              </div>
-            )}
-          </div>
         </section>
         <section className="pad instagram-section" aria-labelledby="instagram-title">
           <div className="instagram-heading">
