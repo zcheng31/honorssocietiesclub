@@ -308,6 +308,13 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
                       </a>
                     ) : x.location}
                   </small>
+                  {"signupLink" in x && x.signupLink && (
+                    <p className="event-signup">
+                      <a className="button outline" href={x.signupLink} target="_blank" rel="noreferrer">
+                        Fill out form ↗
+                      </a>
+                    </p>
+                  )}
                 </div>
               </article>
             ))}
@@ -322,6 +329,20 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
               </div>
             )}
           </div>
+          <article className="event case-competition-interest">
+            <div className="date">
+              <strong>SPRING</strong>
+              <span>2027</span>
+            </div>
+            <div>
+              <span className="tag">Consulting Case Competition I &amp; II</span>
+              <h3>Interested in HSC’s case competitions?</h3>
+              <p>Share your interest in the spring consulting case competitions. We’ll follow up with details as plans are announced.</p>
+              <a className="button outline" href="https://forms.cloud.microsoft/r/vEX8qU17mu" target="_blank" rel="noreferrer">
+                Fill out form ↗
+              </a>
+            </div>
+          </article>
           <div className="past-events">
             <Heading
               kicker="Event archive · Newest first"
@@ -1530,6 +1551,16 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
                 "Your message will be emailed directly to the Honors Societies Club."}
             </p>
           </form>
+        </section>
+        <section className="pad join newsletter-signup" aria-labelledby="newsletter-title">
+          <div className="join-copy">
+            <p className="eyebrow">Stay connected</p>
+            <h2 id="newsletter-title">Would you like to subscribe to our email newsletter?</h2>
+            <p>Get HSC news, event reminders, and student opportunities in your inbox.</p>
+            <a className="button light" href="https://forms.cloud.microsoft/r/cMBLEbrGLj" target="_blank" rel="noreferrer">
+              Student Outreach – HSC: Fill out form ↗
+            </a>
+          </div>
         </section>
       </main>
       <footer>
