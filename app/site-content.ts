@@ -1,7 +1,7 @@
 export const board=[
  {name:'Joyce Cheng',initials:'JC',role:'President',departments:['executive'],photo:'/joyce-cheng.jpeg',bio:'President',email:'chengz3594@student.laccd.edu',linkedin:'https://www.linkedin.com/in/joycecheng31'},
  {name:'Chidera Maduabuchi',initials:'CM',role:'Vice President',departments:['executive'],photo:'/chidera-maduabuchi.jpg',bio:'Vice President',email:'maduabcv5680@student.laccd.edu',linkedin:''},
- {name:'Yuna Hwang',initials:'YH',role:'Secretary',departments:['executive'],photo:'/yuna-hwang.jpg',bio:'Secretary',email:'hwangy8749@student.laccd.edu',linkedin:'https://www.linkedin.com/in/yunahwang721'},
+ {name:'Yuna Hwang',initials:'YH',role:'Secretary & Treasurer',departments:['executive'],photo:'/yuna-hwang.jpg',bio:'Secretary & Treasurer',email:'hwangy8749@student.laccd.edu',linkedin:'https://www.linkedin.com/in/yunahwang721'},
  {name:'Sophia Garcia',initials:'SG',role:'Public Relations',departments:['public-relations'],photo:'/sophia-garcia.jpg',bio:'Public Relations',email:'',linkedin:''},
  {name:'Marvin Zamudio',initials:'MZ',role:'Event Coordinator',departments:['events'],photo:'/marvin-zamudio.jpg',bio:'Event Coordinator',email:'Zamudim6948@student.laccd.edu',linkedin:''},
  {name:'Cindy Chen',initials:'CC',role:'Event Coordinator',departments:['events'],photo:'/cindy-chen.jpg',bio:'Event Coordinator',email:'',linkedin:''},
