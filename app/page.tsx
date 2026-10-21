@@ -276,7 +276,7 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
                   <h3>{x.title}</h3>
                   <p>{x.description}</p>
                   <small>
-                    {x.time} · {"locationLink" in x && x.locationLink ? (
+                    {x.time} · {"locationLink" in x && typeof x.locationLink === "string" ? (
                       <a href={x.locationLink} target="_blank" rel="noreferrer">
                         {x.location} ↗
                       </a>
