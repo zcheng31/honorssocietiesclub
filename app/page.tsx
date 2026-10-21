@@ -129,31 +129,7 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
     window.addEventListener("keydown", closeMenu);
     return () => window.removeEventListener("keydown", closeMenu);
   }, []);
-  useEffect(() => {
-    const main = document.querySelector<HTMLElement>(`.site-view-${view}`);
-    if (!main) return;
-    const sections = Array.from(main.querySelectorAll<HTMLElement>(":scope > section"))
-      .filter((section) => section.id !== "opportunities");
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      sections.forEach((section) => section.classList.add("reveal-visible"));
-      return;
-    }
-    main.classList.add("motion-ready");
-    sections.forEach((section) => section.classList.add("reveal-section"));
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("reveal-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.08, rootMargin: "0px 0px -6% 0px" },
-    );
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, [view]);
+
 
   return (
     <>
