@@ -212,3 +212,14 @@ body{background-attachment:scroll}
 .past-event .date span{font-size:9px;letter-spacing:.06em}
 .past-event h3{margin:0 0 5px;font-size:19px;line-height:1.15}
 .past-event small{display:block;font-size:11px;line-height:1.4}
+
+
+/* Keep the Work-Study callout compact within the shared college-support section. */
+.fws-resource{display:block;max-width:980px;margin:18px 0 38px;padding:clamp(24px,3vw,38px);border-radius:24px}
+.fws-resource-main{max-width:860px}
+.fws-resource-main>.eyebrow{margin-bottom:8px}
+.fws-resource-main>h3{margin:8px 0 12px;font-size:clamp(28px,3.5vw,40px)}
+.fws-resource-main>p{max-width:72ch}
+.fws-resource-main .fws-disclaimer{margin:18px 0;padding:12px 15px;font-size:13px}
+.fws-resource-main .fws-actions{margin-top:18px}
+@media(max-width:600px){.fws-resource{margin:22px 0 30px;padding:22px 18px;border-radius:18px}}
