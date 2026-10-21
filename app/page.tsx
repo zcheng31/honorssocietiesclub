@@ -3,8 +3,6 @@ import { type FormEvent, useEffect, useState } from "react";
 import Link from "next/link";
 import { board, events, opportunities, pastEvents, workshops } from "./site-content";
 
-const teams =
-  "https://teams.microsoft.com/meet/242053094361812?p=DPfiRc8FW4X8wmHchU";
 const officerApplication = "https://forms.cloud.microsoft/r/FdjQE5SiKE";
 const discordInvite = "https://discord.gg/7qPdPG4FT9";
 const clubEmail = "honorssocietiesclub@gmail.com";
@@ -347,27 +345,24 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
         </section>
         <section className="notice meeting-hub" aria-labelledby="meeting-hub-title">
           <div className="meeting-intro">
-            <p className="meeting-label"><span /> CLUB MEETINGS ONLINE</p>
-            <h2 id="meeting-hub-title">Meet us on Microsoft Teams.</h2>
+            <p className="meeting-label"><span /> CLUB MEETINGS IN PERSON</p>
+            <h2 id="meeting-hub-title">Meet us on campus.</h2>
             <p>
               Join our general meetings to hear club updates, plan activities,
               and connect with fellow Honors students.
             </p>
-            <a className="meeting-button" href={teams} target="_blank" rel="noreferrer">
-              Join the club meeting ↗
+            <a className="meeting-button" href="#events">
+              See the next meeting ↗
             </a>
-            <small>
-              Meeting ID: 242 053 094 361 812 · Request the passcode through
-              the club contact form.
-            </small>
+            <small>Our next general meeting is in person at E3-307.</small>
           </div>
           <div className="meeting-details">
             <div className="meeting-row">
               <span>01</span>
               <div>
                 <small>WHEN WE MEET</small>
-                <h3>October 22 · 12:30–1:30 PM</h3>
-                <p>Join our next general meeting on Microsoft Teams.</p>
+                <h3>October 23 · 3:00–4:00 PM</h3>
+                <p>Join our next in-person general meeting in E3-307.</p>
               </div>
             </div>
             <div className="meeting-row">
