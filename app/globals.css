@@ -162,8 +162,6 @@ nav a,.button,.meeting-links a,.open-role-apply{display:inline-flex;align-items:
 .department-open{flex-basis:min(210px,74vw);min-height:250px;margin-top:12px;padding:22px;border-radius:24px}
 @media(min-width:1050px){
   .leadership-departments{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
-  .leadership-department[data-department="executive"]{grid-column:1/-1}
-  .leadership-department[data-department="technology"]{grid-column:1/-1}
 }
 @media(max-width:800px){
   .leadership-departments{gap:38px}
