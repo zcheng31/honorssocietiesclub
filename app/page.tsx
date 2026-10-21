@@ -323,19 +323,15 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
               title="Past Events."
               text="A look back at HSC activities and community moments from this semester."
             />
-            <div className="event-grid">
+            <div className="event-grid past-event-grid">
               {pastEvents.map((x) => (
-                <article className="event" key={x.title}>
+                <article className="event past-event" key={x.title}>
                   <div className="date">
                     <strong>{x.day}</strong>
                     <span>{x.month}</span>
                   </div>
                   <div>
-                    {x.tags.map((tag) => (
-                      <span className="tag" key={tag}>{tag}</span>
-                    ))}
                     <h3>{x.title}</h3>
-                    <p>{x.description}</p>
                     <small>{x.time} · {x.location}</small>
                   </div>
                 </article>
