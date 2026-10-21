@@ -196,3 +196,9 @@ nav a,.button,.meeting-links a,.open-role-apply{display:inline-flex;align-items:
 .form-status.error{color:#9e2f2f}
 .form-status a{font-weight:800}
 .past-events{margin-top:clamp(56px,8vw,96px)}
+
+
+/* Keep scrolling stable on mobile browsers: avoid composited blur/parallax layers. */
+body{background-attachment:scroll}
+.hero>div:first-child,.hero-card{transform:none;will-change:auto}
+.hero-card{-webkit-backdrop-filter:none;backdrop-filter:none}
