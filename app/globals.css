@@ -202,3 +202,13 @@ nav a,.button,.meeting-links a,.open-role-apply{display:inline-flex;align-items:
 body{background-attachment:scroll}
 .hero>div:first-child,.hero-card{transform:none;will-change:auto}
 .hero-card{-webkit-backdrop-filter:none;backdrop-filter:none}
+
+
+/* Compact archive cards keep past events visible without crowding the page. */
+.event-grid.past-event-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px}
+.past-event{grid-template-columns:56px minmax(0,1fr);align-items:center;gap:14px;padding:14px 16px;border-radius:18px}
+.past-event .date{width:56px;height:56px;border-radius:13px}
+.past-event .date strong{font-size:23px}
+.past-event .date span{font-size:9px;letter-spacing:.06em}
+.past-event h3{margin:0 0 5px;font-size:19px;line-height:1.15}
+.past-event small{display:block;font-size:11px;line-height:1.4}
