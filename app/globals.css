@@ -221,3 +221,17 @@ body{background-attachment:scroll}
 .fws-resource-main .fws-disclaimer{margin:18px 0;padding:12px 15px;font-size:13px}
 .fws-resource-main .fws-actions{margin-top:18px}
 @media(max-width:600px){.fws-resource{margin:22px 0 30px;padding:22px 18px;border-radius:18px}}
+
+
+/* Stabilize scrolling across browsers: disable scroll-linked/composited effects. */
+html{scroll-behavior:auto!important}
+body{background-attachment:scroll!important}
+body::after{display:none!important}
+header{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+.hero>div:first-child,.hero-card{transform:none!important;translate:none!important;scale:1!important;will-change:auto!important}
+.hero-card{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+.motion-ready>.reveal-section,.motion-ready>.section-transition,.motion-ready .reveal-section.reveal-visible{opacity:1!important;filter:none!important;transform:none!important;translate:none!important;scale:1!important;clip-path:none!important;transition:none!important;animation:none!important;box-shadow:none!important;will-change:auto!important}
+.motion-ready .reveal-section :is(.board-card,.opportunity-group,.opportunity-feature,.event,.chapter-card,.timeline article,.application-guides article,.aid-deadlines article,.campus-scholarships article,.official-apps a,.links a,.contact-layout>div,.qr-card,.transfer-compass article){opacity:1!important;filter:none!important;transform:none!important;translate:none!important;scale:1!important;transition:none!important;animation:none!important;will-change:auto!important}
+.hero::before,.hero-card::after,.honors-transfer::after,.event-empty>span{animation:none!important}
+.instagram-carousel{justify-content:center;overflow:visible;scroll-snap-type:none}
+.instagram-carousel .instagram-card{flex-basis:min(520px,90vw);max-width:520px}

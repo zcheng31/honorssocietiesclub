@@ -401,6 +401,7 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
               const members = board.filter((member) =>
                 member.departments.includes(department.key),
               );
+              if (members.length === 0 && department.openRoles.length === 0) return null;
               return (
                 <section
                   className="leadership-department"
@@ -443,7 +444,7 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
                             <span className="portrait-frame">
                               <img
                                 src={sitePath(member.photo)}
-                                alt={`${member.name}, ${member.role} of Honors Societies Club`}
+                                alt={`${member.name}${member.role ? `, ${member.role}` : ""} of Honors Societies Club`}
                                 loading="lazy"
                                 decoding="async"
                               />
@@ -470,7 +471,7 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
                             ✿
                           </i>
                         </div>
-                        <b className="officer-role">{member.role}</b>
+                        {member.role && <b className="officer-role">{member.role}</b>}
                         <h3>{member.name}</h3>
                         <div className="officer-actions">
                           {member.linkedin ? (
@@ -1188,8 +1189,8 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
               <p className="eyebrow">Updates from our Official Platforms</p>
               <h2 id="instagram-title">Latest from ELAC Honors.</h2>
               <p>
-                Fresh from @elachonors: class finds, campus news, and the posts
-                worth stopping your scroll for.
+                Follow the official @elachonors profile for current campus
+                news, class announcements, and event updates.
               </p>
             </div>
             <a
@@ -1200,90 +1201,23 @@ export function ClubSite({ view = "home" }: { view?: "home" | "transfer" }) {
               Follow @elachonors ↗
             </a>
           </div>
-          <div
-            className="instagram-carousel"
-            tabIndex={0}
-            aria-label="Recent ELAC Honors Instagram posts"
-          >
+          <div className="instagram-carousel" aria-label="Official ELAC Honors Instagram">
             <a
-              className="instagram-card instagram-poster clay"
-              href="https://www.instagram.com/elachonors/p/Ddc9ANDsilZ/"
+              className="instagram-card instagram-poster community"
+              href="https://www.instagram.com/elachonors/"
               target="_blank"
               rel="noreferrer"
             >
-              <div className="instagram-art"><span>✦</span><b>CLAY &amp; CONNECT</b></div>
+              <div className="instagram-art"><span>@</span><b>ELAC HONORS</b></div>
               <div className="instagram-copy">
-                <small>SEPTEMBER 18, 2026 · NEWEST POST</small>
-                <h3>Clay &amp; Connect Workshop</h3>
-                <p>Friday, September 25 · 12:30–1:30 PM · EAST-S2, Room 203. No experience needed; all ELAC students are welcome.</p>
-              </div>
-            </a>
-            <a
-              className="instagram-card instagram-poster rsvp"
-              href="https://www.instagram.com/elachonors/p/DdcR1F7Eqwz/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div className="instagram-art"><span>✓</span><b>RESERVE A FREE SPOT</b></div>
-              <div className="instagram-copy">
-                <small>SEPTEMBER 18, 2026</small>
-                <h3>Clay &amp; Connect RSVP</h3>
-                <p>Materials and firing are included. Open the Instagram post for the free RSVP link and event reminder.</p>
-              </div>
-            </a>
-            <a
-              className="instagram-card"
-              href="https://www.instagram.com/elachonors/p/Dc0I6mjs7Ox/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src={sitePath("/instagram-first-general-meeting.webp")}
-                alt="ELAC Honors Instagram announcement for HSC’s September 4, 2026 first general meeting"
-                loading="lazy"
-                decoding="async"
-              />
-              <div className="instagram-copy">
-                <small>SEPTEMBER 2, 2026</small>
-                <h3>HSC First General Meeting</h3>
-                <p>The fall kickoff introduced the board, Honors, PTK and AGS opportunities, and upcoming HSC activities.</p>
-              </div>
-            </a>
-            <a
-              className="instagram-card instagram-poster spanish"
-              href="https://www.instagram.com/elachonors/p/DcPKZMWS3Ac/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div className="instagram-art"><span>H</span><b>ESPAÑOL</b></div>
-              <div className="instagram-copy">
-                <small>AUGUST 19, 2026</small>
-                <h3>Honors Spanish 10</h3>
-                <p>Online Latin American Civilization with Professor Nora Zepeda · Fall 2026 · Section 24339.</p>
-              </div>
-            </a>
-            <a
-              className="instagram-card"
-              href="https://www.instagram.com/elachonors/p/DcPJBLUy70d/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src={sitePath("/instagram-post-2.png")}
-                alt="ELAC Honors Instagram post promoting Philosophy 20 for Fall 2026"
-                loading="lazy"
-                decoding="async"
-              />
-              <div className="instagram-copy">
-                <small>AUGUST 19, 2026</small>
-                <h3>Philosophy 20</h3>
-                <p>Professor G. Villaseñor · Tuesdays and Thursdays, 1:45–3:10 PM · Honors section 20592.</p>
+                <small>OFFICIAL INSTAGRAM</small>
+                <h3>@elachonors</h3>
+                <p>Open the official profile for the newest campus announcements, class news, and event updates.</p>
               </div>
             </a>
           </div>
           <p className="instagram-note">
-            Public post previews checked September 23, 2026. Follow @elachonors
-            for the newest updates.
+            Follow ELAC Honors directly on Instagram to see current posts.
           </p>
         </section>
         <section id="resources" className="pad cream">
